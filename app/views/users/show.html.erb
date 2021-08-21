@@ -1,0 +1,40 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <!--<th></th> ←この一行がなかったら左からうまっていく？-->
+            <th>Title</th>
+            <th>Option</th>
+            <th colspan="3"></th>
+            <!--colspan属性:テーブルタグで使う横方向で属性情報をまとめる機能のこと。３と入れれば３つ分のセルがまとまる。ここでは内容が空なので視覚的な変化はないと思われる-->
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+          <tr>
+            <td>
+              <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback:"no_image.jpeg" %>
+              <!--apli2-5 プロフィール画像をビューに〜を参照。fallbackの書き方は要確認-->
+              <!--current_user.idは不要?-->
+            </td>
+            <td>
+              <%= link_to book.title, book_path(book.id) %>
+              <!--(book.id)の.idは不要？-->
+            </td>
+            <td>
+              <%= book.body %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,158 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg">
+      <table class="table">
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>name</th>
+          	<th><%= current_user.name %></th>
+          </tr>
+          <tr>
+      	    <th>introduction</th>
+        	  <th><%= current_user.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+
+  <div class="row">
+    <%= link_to "ここはボタンになる", edit_user_registration_path %>
+  </div>
+    <h2 class="mt-3">New book</h2>
+      <%= form_with model:@book, url: book_path(:id), local:true do |f| %>
+        <div class="form-group">
+          <label for="book_title">Title</label>
+        </div>
+        <%= f.text_field :title %>
+        <div class="form-group">
+          <label for="book_option">Option</label>
+        </div>
+        <%= f.text_area :body %>
+        <div class="form-group">
+          <%= f.submit 'Create Book', class:"btn btn-success" %>
+        </div>
+      <% end %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><a href="/users/14772">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12172" href="/books/12172">リーダブルコード</a></td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14773">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12173" href="/books/12173">トラブル知らずのシステム設計</a></td>
+        <td>システム設計の要点を図解で説明してくれます。</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14774">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12174" href="/books/12174">たのしいRuby</a></td>
+        <td>Rubyの入門におすすめです。</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14777">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12175" href="/books/12175">a</a></td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14776">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12176" href="/books/12176">ハリーポッター</a></td>
+        <td>qqqqq</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14778">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12177" href="/books/12177">rtyu</a></td>
+        <td>rtyuiop</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14779">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12178" href="/books/12178">fmds</a></td>
+        <td>ghjk</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14779">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12179" href="/books/12179">こんにちは</a></td>
+        <td>dhdffv</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14780">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12180" href="/books/12180">w</a></td>
+        <td>w</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14778">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12181" href="/books/12181">qwer</a></td>
+        <td>asdf</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14780">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12182" href="/books/12182">pooh</a></td>
+        <td>AAミルン</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14785">
+          <img class="attachment user profile_image" src="/attachments/2b34de965221e44de21e4e13aa064b9f0d833462/store/fill/50/50/b62121a21b5e983058edbf257bc854219cb8bf889924a4c482998b8b93b2/profile_image">
+</a>        </td>
+        <td><a class="book_12183" href="/books/12183">リーダブルコード</a></td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14786">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12184" href="/books/12184">a</a></td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14788">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg">
+</a>        </td>
+        <td><a class="book_12185" href="/books/12185">TEST</a></td>
+        <td>あああ</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14785">
+          <img class="attachment user profile_image" src="/attachments/2b34de965221e44de21e4e13aa064b9f0d833462/store/fill/50/50/b62121a21b5e983058edbf257bc854219cb8bf889924a4c482998b8b93b2/profile_image">
+</a>        </td>
+        <td><a class="book_12186" href="/books/12186">リーダブルコード</a></td>
+        <td>test</td>
+      </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
