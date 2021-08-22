@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     # .booksはおそらくbookテーブル内のそのユーザーに紐付けられた情報を参照している。
   end
 
+  def index
+    @users = User.all
+  end
+
   def edit
     @user = User.find(params[:id])
   end

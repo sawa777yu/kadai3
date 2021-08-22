@@ -1,1 +1,53 @@
-<h1>show</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'books/info' %>
+      <h2 class="mt-3">New book</h2>
+      <%= form_with model:@book, local:true do |f| %>
+        <div class="form-group">
+          <label for="book_title">Title</label>
+        </div>
+        <%= f.text_field :title %>
+        <div class="form-group">
+          <label for="book_option">Option</label>
+        </div>
+        <%= f.text_area :body %>
+        <div class="form-group">
+          <%= f.submit 'Create Book', class:"btn btn-success" %>
+          <!--createした後のながれについて-->
+          <!--indexアクション内で定義された@bookはBookモデルに空のデータを作成する。-->
+          <!--一連のフォームからデータを入力された@bookに対してcreateアクションが実行される-->
+          <!---->
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+  	  <h2>Book detail</h2>
+  		<table class="table">
+  		  <tbody>
+          <tr>
+            <td>
+              <%= attachment_image_tag @books.user_id, :profile_image, :fill, 60, 60, fallback:"no_image.jpeg", size:'60x60' %>
+              <!--apli2-5 プロフィール画像をビューに〜を参照。fallbackの書き方は要確認-->
+              <!--current_user.idは不要?-->
+            </td>
+            <td>
+              <%= link_to book_path(@book.id) do %>
+                <%= @book.title %>
+              <% end %>
+              <!--(book.id)の.idは不要？-->
+            </td>
+            <td>
+              <%= @book.body %>
+            </td>
+            <td>
+              <%# if @user.id == current_user.id %>
+              <!--<p><%#= link_to "Edit", edit_book_path(@user) %></p>-->
+              <%# end %>
+            </td>
+          </tr>
+         </tbody>
+      </table>
+    </div>
+  </div>
+</div>
