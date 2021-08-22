@@ -2,16 +2,20 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    # formで入力された値をbook_paramsで渡す。それをnewメソッドで新規作成
     @book.user_id = current_user.id
-    if @book.save
-      redirect_to book_path(book_params)
-    else
-      render :book
-    end
+    # formでは@bookにuserのidは入力されていないのでcurrent_user.idでログインしているユーザーのidを渡す
+    @book.save
+    # formの情報およびユーザーid情報の入った@bookをsaveする。
+    redirect_to book_path(@book.id)
+    # redirect先に指定しているshowのページにはidの指定が必要。
+    # @book.saveにて@bookを保存したことで投稿した@bookの情報にidが割り振られたので（saveしないとidは割り振られない）
+    # @book.idとすることで投稿されたbookのshowページへ飛ばすことができる
   end
 
   def index
     @book = Book.new
+    @books = Book.all
   end
 
   def show
