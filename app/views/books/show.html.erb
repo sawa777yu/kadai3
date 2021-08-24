@@ -50,7 +50,7 @@
             </td>
             <td>
               <% if @user.id == current_user.id %>
-                <%= link_to "Destory", book_path(@book), method: :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-sm btn-danger destroy_book_#{@book.id}" %>
+                <%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-sm btn-danger destroy_book_#{@book.id}" %>
               <% end %>
             </td>
           </tr>
